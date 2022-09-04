@@ -44,7 +44,7 @@ public class ApiTest extends BaseTest {
                 .body(new StudentData(newStudentFirstName, newStudentLastName))
                 .post("/students")
                 .then().statusCode(200);
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Student")
@@ -62,7 +62,7 @@ public class ApiTest extends BaseTest {
         Student studentGetResponse = RestAssured.get("/students/{id}", student.id).as(Student.class);
         Assert.assertEquals(studentGetResponse.firstName, newStudentFirstName);
         Assert.assertEquals(studentGetResponse.lastName, newStudentLastName);
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Student")
@@ -76,7 +76,7 @@ public class ApiTest extends BaseTest {
         Assert.assertEquals(searchResult.length, 1);
         Set<String> names = Arrays.stream(searchResult).map(s -> s.firstName).collect(Collectors.toSet());
         Assert.assertEquals(names, Set.of("Oleksandr"));
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Student")
@@ -90,7 +90,7 @@ public class ApiTest extends BaseTest {
         Assert.assertEquals(searchResult.length, 1);
         Set<String> names = Arrays.stream(searchResult).map(s -> s.lastName).collect(Collectors.toSet());
         Assert.assertEquals(names, Set.of("Golovach"));
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Student")
@@ -104,7 +104,7 @@ public class ApiTest extends BaseTest {
         Assert.assertEquals(searchResult.length, 2);
         Set<String> names = Arrays.stream(searchResult).map(s -> s.firstName).collect(Collectors.toSet());
         Assert.assertEquals(names, Set.of("Angela", "Volodymyr"));
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Student")
@@ -131,7 +131,7 @@ public class ApiTest extends BaseTest {
         studentGetResponse = RestAssured.get("/students/{id}", student.id).as(Student.class);
         Assert.assertEquals(studentGetResponse.firstName, "Newly");
         Assert.assertEquals(studentGetResponse.lastName, "Updated");
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Student")
@@ -139,7 +139,7 @@ public class ApiTest extends BaseTest {
         System.out.print("testGetStudentsList - started");
         Student[] allStudents = RestAssured.get("/students").as(Student[].class);
         Assert.assertEquals(allStudents.length, 3);
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Group")
@@ -293,7 +293,7 @@ public class ApiTest extends BaseTest {
         contentCreateResponse.then().statusCode(200);
         content = contentCreateResponse.as(AssignmentContentData.class);
         Assert.assertEquals(content.content, "testSecondContent");
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Assignment")
@@ -332,7 +332,7 @@ public class ApiTest extends BaseTest {
                 Assert.assertEquals(assignmentDashboardForStudent.contentId, content_id);
             }
         }
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Assignment")
@@ -365,7 +365,7 @@ public class ApiTest extends BaseTest {
                 .extract().as(AssignmentDashboardForStudent[].class);
         Assert.assertEquals(assignmentDashboardForStudent[0].studentId, studentId);
         Assert.assertEquals(assignmentDashboardForStudent[0].contentId, contentId);
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Student")
@@ -407,7 +407,7 @@ public class ApiTest extends BaseTest {
                 Assert.assertTrue(isStudentinGroup);
             }
         }
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Assignment")
@@ -445,7 +445,7 @@ public class ApiTest extends BaseTest {
                 Assert.assertTrue(isContentFromGetResponseInStudentDashboard);
             }
         }
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Assignment")
@@ -524,7 +524,7 @@ public class ApiTest extends BaseTest {
 
         List<String> solutionAssignment = studentDashboard.assignments.stream().map(assign -> assign.solution).toList();
         Assert.assertEquals(solutionAssignment.get(0), "testSolution");
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 
     @Test(groups = "Assignment")
@@ -611,7 +611,7 @@ public class ApiTest extends BaseTest {
 
         List<Integer> markAssignment = studentDashboard.assignments.stream().map(assign -> assign.mark).toList();
         Assert.assertEquals(markAssignment.get(0), assignmentMark.mark);
-        System.out.print(" / finished");
+        System.out.println(" / finished");
     }
 }
 
