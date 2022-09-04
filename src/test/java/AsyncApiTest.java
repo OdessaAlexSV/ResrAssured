@@ -76,6 +76,7 @@ public class AsyncApiTest extends BaseTest {
 
     @Test
     public void testStudentDashboardWithoutSolution() {
+        System.out.print("testStudentDashboardWithoutSolution - started");
         Student[] allStudents = RestAssured.get("/students").as(Student[].class);
         List<Integer> studentIds = Arrays.stream(allStudents).map(student -> student.id).toList();
         for (Integer i : studentIds) {
@@ -100,10 +101,12 @@ public class AsyncApiTest extends BaseTest {
 
                     .until(() -> verifyMarksOnDashboard(i, List.of(1, 1, 1)));
         }
+        System.out.println(" / finished");
     }
 
     @Test
     public void testStudentDashboardWithSolution() {
+        System.out.print("testStudentDashboardWithSolution - started");
         Student[] allStudents = RestAssured.get("/students").as(Student[].class);
         List<Integer> studentIds = Arrays.stream(allStudents).map(student -> student.id).toList();
         for (Integer i : studentIds) {
@@ -139,6 +142,7 @@ public class AsyncApiTest extends BaseTest {
                     .until(() -> verifyMarksOnDashboard(i, List.of(5, 5, 5)));
 
         }
+        System.out.println(" / finished");
     }
 
     private boolean verifyMarksOnDashboard(Integer studentId, List<Integer> expectedMarks) {
