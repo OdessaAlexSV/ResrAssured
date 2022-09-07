@@ -52,13 +52,5 @@ public class BaseTest {
                 .setAccept(ContentType.JSON)
                 .addHeader("user-token", sessionToken)
                 .build();
-
-        RestAssured.config = RestAssured.config.headerConfig(HeaderConfig.headerConfig().overwriteHeadersWithName("user-token"));
-
-        RestAssured.requestSpecification = new RequestSpecBuilder()
-                .setContentType(ContentType.JSON)
-                .setAccept(ContentType.JSON)
-                .addHeader("user-token", sessionToken)
-                .build();
     }
 }
