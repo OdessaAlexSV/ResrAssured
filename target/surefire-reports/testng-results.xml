@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-04T22:51:01 EEST" name="Only Group Tests" finished-at="2022-09-04T22:51:15 EEST" duration-ms="13623">
+    <groups>
+      <group name="Group">
+        <method signature="ApiTest.testCreateGroup()[pri:0, instance:ApiTest@327b636c]" name="testCreateGroup" class="ApiTest"/>
+      </group> <!-- Group -->
+    </groups>
+    <test started-at="2022-09-04T22:51:01 EEST" name="ApiTest Class" finished-at="2022-09-04T22:51:15 EEST" duration-ms="13623">
+      <class name="ApiTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ApiTest@327b636c]" started-at="2022-09-04T22:51:01 EEST" name="setUp" finished-at="2022-09-04T22:51:02 EEST" duration-ms="366" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUserToken()[pri:0, instance:ApiTest@327b636c]" started-at="2022-09-04T22:51:02 EEST" name="setUserToken" finished-at="2022-09-04T22:51:04 EEST" duration-ms="2794" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUserToken -->
+        <test-method is-config="true" signature="prepareStudentsScope()[pri:0, instance:ApiTest@327b636c]" started-at="2022-09-04T22:51:04 EEST" name="prepareStudentsScope" finished-at="2022-09-04T22:51:08 EEST" duration-ms="3515" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prepareStudentsScope -->
+        <test-method signature="testCreateGroup()[pri:0, instance:ApiTest@327b636c]" started-at="2022-09-04T22:51:08 EEST" name="testCreateGroup" finished-at="2022-09-04T22:51:15 EEST" duration-ms="6920" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateGroup -->
+      </class> <!-- ApiTest -->
+    </test> <!-- ApiTest Class -->
+  </suite> <!-- Only Group Tests -->
+</testng-results>
